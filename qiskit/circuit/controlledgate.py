@@ -240,6 +240,7 @@ class ControlledGate(Gate):
         if self.base_gate:
             if self.base_gate.mutable:
                 self.base_gate.params = parameters
+                self._params = parameters
             elif parameters:
                 raise CircuitError("cannot set parameters on immutable base gate")
         else:
